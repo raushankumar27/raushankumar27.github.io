@@ -1,0 +1,214 @@
+*{
+	padding:0px;
+	margin: 0px;
+	box-sizing:border-box;
+}
+.outerbox{
+	position: relative;
+	height:100%;
+	width:100%;
+	overflow:auto;
+	overflow: hidden;
+}
+.heading{
+	height:50px;
+	background-color: #e6e7e7;
+}
+.heading h3{
+	padding-top: 10px;
+	padding-left: 20px;
+	width:50%;
+	float:left;
+}
+.heading button{
+	padding:4px;
+	font-size: 33;
+	height:100%;
+	background: #e7e7e7;
+	border: 0px;
+}
+#revealside{
+padding:8px;
+	float:left;
+	    -ms-transform: rotate(90deg); 
+    -webkit-transform: rotate(90deg); 
+    transform: rotate(90deg);
+}
+#revealmenu{
+	    -ms-transform: rotate(90deg); 
+    -webkit-transform: rotate(90deg); 
+    transform: rotate(90deg);
+	float:right;
+
+}
+.optionbar{
+  position: absolute;
+  width: 200px;
+  top:50px;
+  right:0px;
+  margin-right: 0px;
+  bottom: 0px;
+  	overflow-y : auto;
+	overflow-x: hidden;
+  background-color: #eee;
+  text-align: center;
+  overflow-y: auto;
+  z-index:27;
+	transition: all 0.3s ease-out;
+
+}
+
+.optbtn{
+	display: block;
+	margin:8px;
+	width:100%;
+	height:40px;
+}
+
+#localinput{
+display:none;
+}
+#fileinput{
+	position:absolute;
+	width:60px;
+	left:0px;
+	z-index: -27;
+}
+
+.sidebar{
+	position: absolute;
+	top:50px;
+	left:0px;
+	padding: 20px 10px;
+	bottom:0px;
+	width:300px;
+	background-color: #ddd;
+	margin-left: 0px;
+	transition: all 0.3s ease-out;
+	overflow-y : auto;
+	overflow-x: hidden;
+	text-align: center;
+	z-index: 27;
+}
+.sidebarhide{
+	margin-left: -300px;
+}
+.contentfull{
+	left:0px ;
+}
+.content{
+
+	position: absolute;
+	top:50px;
+	bottom:0px;
+	left:0px;
+	right:0px;
+	background-color: #999;
+	transition: all 0.3s ease-out;
+	overflow:auto;
+	padding-left: 5%;
+	padding-right: 5%;
+	overflow-y: scroll;
+}
+
+.sidebarimage{
+	display: inline-block;
+	height:150px;
+	width:90%;
+	text-align: center;
+}
+.pimg{
+	height:90%;
+	width:auto;
+}
+
+.heading h4{
+	text-align: left;
+	padding:5px;
+	margin-top: 2px;
+}
+
+.content > div{
+	overflow: hidden;
+	margin-top: 10px;
+	margin-bottom: 10px;
+	background-color: white; 
+}
+#canvas, #functionbox,#textboxeditor,#textfunctionbox{
+	display: none;
+}
+
+#functionbox,#textfunctionbox{
+  position: absolute;
+  width: 100px;
+  top:50px;
+  right:0px;
+  margin-right: 0px;
+  bottom: 0px;
+  background-color: #aaa;
+  overflow-x: hidden;
+  overflow-y: auto;
+  text-align: center;
+  overflow-y: auto;
+  z-index:11;
+	transition: all 0.3s ease-out;
+}
+
+#itf,#itb,#imageopacity{
+	width:90%;
+	margin:8px;
+	height:40px;
+}
+
+.rtb{
+	float:left;
+	width:45%;
+	height:30px;
+}
+
+#rotationslider,#ttf,#ttb,#itb,#itb{
+	width:80%;
+	height:30px;
+}
+.funbtn{
+	width: 90%;
+	margin:2px;
+	height:30px;
+}
+
+tspan{
+	font-size: inherit;
+}
+#textfontsize,#textopacity{
+	height:30px;
+}
+
+@media (min-width:900px){
+	.sidebar{
+		margin-left: 0px;
+		z-index: 27;
+	}
+	.content{
+		padding-left: 5%;
+		padding-right: 5%;
+		left:300px ;
+		right:200px;
+		overflow-y: scroll;
+	}
+	.optionbar{
+		margin-right: 0px !important; 
+		z-index:27;
+	}
+	#revealmenu,#revealside{
+		visibility: hidden;
+	}
+
+	#functionbox, #textfunctionbox{
+ 		 width: 200px;
+  		top:50px;
+  		z-index:11;
+		transition: all 0.3s ease-out;
+	}
+
+}
+
