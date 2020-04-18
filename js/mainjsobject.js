@@ -5,6 +5,7 @@ testcollage= function (opts) {
 		cimgnum: 0,
 		paper: 0,
 		selimage: 0,
+		caseimage:0,
 		selrect: 0,
 		hres: 0,
 		wres: 0,
@@ -61,6 +62,7 @@ testcollage= function (opts) {
 		htmlstr += "	<div id=functionbox>";
 		htmlstr += "		<button type=button id=itf>Bring Front<\/button>";
 		htmlstr += "		<button type=button id=itb>Send Back<\/button>";
+		htmlstr += "		<button type=button id=mpc>Toggle Phone Case<\/button>";
 		htmlstr += "		<h4>Opacity<\/h4>";
 		htmlstr += "		<input id=imageopacity type=\"number\" step=1 min=0 max=100 >";
 		htmlstr += "		<h4>Rotate<\/h4>";
@@ -341,6 +343,18 @@ testcollage= function (opts) {
 		});
 		$("#" + PAGE_OPTIONS.elemId).find("#itb").on('click', function (e) {
 			PAGE_DATA.selimage.toBack();
+
+		});
+		$("#" + PAGE_OPTIONS.elemId).find("#mpc").on('click', function (e) {
+			if(PAGE_DATA.caseimage!=0){
+				PAGE_DATA.caseimage.node.setAttribute("pointer-events","all");
+				PAGE_DATA.caseimage=0;
+			}
+			else{
+				PAGE_DATA.selimage.node.setAttribute("pointer-events","none");
+				PAGE_DATA.caseimage=PAGE_DATA.selimage;
+			}
+			
 
 		});
 		$("#" + PAGE_OPTIONS.elemId).find("#imageopacity").on('click keyup', function (e) {

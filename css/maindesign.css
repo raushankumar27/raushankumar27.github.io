@@ -209,6 +209,8 @@ tspan{
   		z-index:11;
 		transition: all 0.3s ease-out;
 	}
-
+	.case{
+		pointer-events: none;
+	}
 }
 
