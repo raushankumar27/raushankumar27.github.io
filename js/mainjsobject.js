@@ -274,8 +274,8 @@ testcollage= function (opts) {
 			context.drawImage(image, 0, 0);
 			
 			var a = document.createElement("a");
-			a.download = "mycollage.jpeg";
-			a.href = canvas.toDataURL("image/jpef");
+			a.download = "mycollage.png";
+			a.href = canvas.toDataURL("image/PNG");
 			downloadimg = a.href;
 			a.click();
 			

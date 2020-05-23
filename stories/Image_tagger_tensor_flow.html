@@ -1,0 +1,168 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <title>DevFolio Bootstrap Template</title>
+  <meta content="width=device-width, initial-scale=1.0" name="viewport">
+  <meta content="" name="keywords">
+  <meta content="" name="description">
+
+  <!-- Favicons -->
+  <link href="../img/favicon.png" rel="icon">
+  <link href="../img/apple-touch-icon.png" rel="apple-touch-icon">
+
+  <!-- Bootstrap CSS File -->
+  <link href="../lib/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+
+  <!-- Libraries CSS Files -->
+  <link href="../lib/font-awesome/css/font-awesome.min.css" rel="stylesheet">
+  <link href="../lib/animate/animate.min.css" rel="stylesheet">
+  <link href="../lib/ionicons/css/ionicons.min.css" rel="stylesheet">
+  <link href="../lib/owlcarousel/assets/owl.carousel.min.css" rel="stylesheet">
+  <link href="../lib/lightbox/css/lightbox.min.css" rel="stylesheet">
+
+  <!-- Main Stylesheet File -->
+  <link href="../css/style.css" rel="stylesheet">
+
+  <!-- =======================================================
+    Theme Name: DevFolio
+    Theme URL: https://bootstrapmade.com/devfolio-bootstrap-portfolio-html-template/
+    Author: BootstrapMade.com
+    License: https://bootstrapmade.com/license/
+  ======================================================= -->
+</head>
+
+<body>
+  <!--/ Nav Star /-->
+  <nav class="navbar navbar-b navbar-trans navbar-expand-md fixed-top" id="mainNav">
+    <div class="container">
+      <a class="navbar-brand js-scroll" href="../index.html" >Home Page</a>
+      <button class="navbar-toggler collapsed" type="button" data-toggle="collapse" data-target="#navbarDefault"
+        aria-controls="navbarDefault" aria-expanded="false" aria-label="Toggle navigation">
+        <span></span>
+        <span></span>
+        <span></span>
+      </button>
+    </div>
+  </nav>
+  <!--/ Nav End /-->
+
+  <!--/ Intro Skew Star /-->
+  <div class="intro intro-single route bg-image" style="background-image: url(../img/overlay-bg.jpg)">
+    <div class="intro-content display-table">
+      <div class="table-cell">
+        <div class="container">
+          <h2 class="intro-title mb-4" style="color: black;">Image Tagging using Tensor FLow</h2>
+        </div>
+      </div>
+    </div>
+  </div>
+  <!--/ Intro Skew End /-->
+
+  <!--/ Section Blog-Single Star /-->
+  <section class="blog-wrapper sect-pt4" id="blog">
+    <div class="container">
+      <div class="row">
+        <div class="col-sm-12">
+          <div class="post-box">
+            <div class="post-thumb">
+              <img src="../img/post-2.jpg" class="img-fluid" alt="">
+            </div>
+            <div class="post-meta">
+              <h1 class="article-title">Identifying Relevent Tags In An Image</h1>
+            </div>
+            <div class="article-content">
+              <h5>
+                Following Python code can be used to get tags relevent from an image
+              </h5>
+              <blockquote class="blockquote">
+                <code>
+                <pre >
+                  import tensorflow as tf
+                  import numpy as np
+                  from tensorflow.keras.preprocessing import image
+
+                  from tensorflow.keras.applications import  InceptionV3
+                  from tensorflow.keras.applications.inception_v3 import preprocess_input, decode_predictions
+
+                  def get_predicted_tag(file_name_with_path):
+
+                      model = InceptionV3(weights='imagenet')
+
+                      img = image.load_img(file_name_with_path, target_size=(299, 299))
+                      x = image.img_to_array(img)
+                      x = np.expand_dims(x, axis=0)
+                      x = preprocess_input(x)
+
+                      preds = model.predict(x)
+                      return decode_predictions(preds, top=5)[0]
+
+                  if __name__ =="__main__":
+                      tags=get_predicted_tag('Screenshot from 2020-05-16 09-37-37.png')
+                      print(tags)
+                  </pre>
+                </code>
+              </blockquote>
+              <p>This code was tested on python 3.8. Make sure numpy and tensor flow is already installed</p>
+              <p>Installing Library on Linux</p>
+              <blockquote class="blockquote">
+                <code>
+                  <pre>
+                    pip3 install tensorflow
+                    pip3 install numpy
+                  </pre>
+                </code>
+              </blockquote>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+  <!--/ Section Blog-Single End /-->
+
+  <!--/ Section Contact-Footer Star /-->
+  <section class="paralax-mf footer-paralax bg-image route" style="background-image: url(img/overlay-bg.jpg);">
+    <footer>
+      <div class="container">
+        <div class="row">
+          <div class="col-sm-12" >
+            <div class="copyright-box">
+              <p class="copyright">&copy; Copyright <strong>DevFolio</strong>. All Rights Reserved</p>
+              <div class="credits">
+                <!--
+                  All the links in the footer should remain intact.
+                  You can delete the links only if you purchased the pro version.
+                  Licensing information: https://bootstrapmade.com/license/
+                  Purchase the pro version with working PHP/AJAX contact form: https://bootstrapmade.com/buy/?theme=DevFolio
+                -->
+                Designed by <a href="https://bootstrapmade.com/">BootstrapMade</a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </footer>
+  </section>
+  <!--/ Section Contact-footer End /-->
+  
+  <a href="#" class="back-to-top"><i class="fa fa-chevron-up"></i></a>
+  <div id="preloader"></div>
+
+  <!-- JavaScript Libraries -->
+  <script src="../lib/jquery/jquery.min.js"></script>
+  <script src="../lib/jquery/jquery-migrate.min.js"></script>
+  <script src="../lib/popper/popper.min.js"></script>
+  <script src="../lib/bootstrap/js/bootstrap.min.js"></script>
+  <script src="../lib/easing/easing.min.js"></script>
+  <script src="../lib/counterup/jquery.waypoints.min.js"></script>
+  <script src="../lib/counterup/jquery.counterup.js"></script>
+  <script src="../lib/owlcarousel/owl.carousel.min.js"></script>
+  <script src="../lib/lightbox/js/lightbox.min.js"></script>
+  <script src="../lib/typed/typed.min.js"></script>
+  
+  <!-- Template Main Javascript File -->
+  <script src="stories_main.js"></script>
+
+</body>
+</html>
