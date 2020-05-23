@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
   <meta charset="utf-8">
-  <title>DevFolio Bootstrap Template</title>
+  <title>Image Tagger Tensor Flow</title>
   <meta content="width=device-width, initial-scale=1.0" name="viewport">
   <meta content="" name="keywords">
   <meta content="" name="description">
@@ -78,28 +78,28 @@
               <blockquote class="blockquote">
                 <code>
                 <pre >
-                  import tensorflow as tf
-                  import numpy as np
-                  from tensorflow.keras.preprocessing import image
+  import tensorflow as tf
+  import numpy as np
+  from tensorflow.keras.preprocessing import image
 
-                  from tensorflow.keras.applications import  InceptionV3
-                  from tensorflow.keras.applications.inception_v3 import preprocess_input, decode_predictions
+  from tensorflow.keras.applications import  InceptionV3
+  from tensorflow.keras.applications.inception_v3 import preprocess_input, decode_predictions
 
-                  def get_predicted_tag(file_name_with_path):
+  def get_predicted_tag(file_name_with_path):
 
-                      model = InceptionV3(weights='imagenet')
+      model = InceptionV3(weights='imagenet')
 
-                      img = image.load_img(file_name_with_path, target_size=(299, 299))
-                      x = image.img_to_array(img)
-                      x = np.expand_dims(x, axis=0)
-                      x = preprocess_input(x)
+      img = image.load_img(file_name_with_path, target_size=(299, 299))
+      x = image.img_to_array(img)
+      x = np.expand_dims(x, axis=0)
+      x = preprocess_input(x)
 
-                      preds = model.predict(x)
-                      return decode_predictions(preds, top=5)[0]
+      preds = model.predict(x)
+      return decode_predictions(preds, top=5)[0]
 
-                  if __name__ =="__main__":
-                      tags=get_predicted_tag('Screenshot from 2020-05-16 09-37-37.png')
-                      print(tags)
+  if __name__ =="__main__":
+      tags=get_predicted_tag('Screenshot from 2020-05-16 09-37-37.png')
+      print(tags)
                   </pre>
                 </code>
               </blockquote>
@@ -108,8 +108,8 @@
               <blockquote class="blockquote">
                 <code>
                   <pre>
-                    pip3 install tensorflow
-                    pip3 install numpy
+  pip3 install tensorflow
+  pip3 install numpy
                   </pre>
                 </code>
               </blockquote>
